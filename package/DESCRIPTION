@@ -1,0 +1,47 @@
+Package: researchgng
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "First",
+           family = "Last",
+           role = c("aut", "cre"),
+           email = "first.last@example.com")
+Description: What the package does (one paragraph).
+Depends: 
+  R (>= 3.5.0)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/dynverse/dynalysis
+BugReports: https://github.com/dynverse/dynalysis/issues
+Imports:
+  dplyr,
+  dyneval,
+  dynparam,
+  dynplot,
+  dynutils,
+  dynwrap,
+  ggplot2,
+  gng,
+  igraph,
+  purrr,
+  qsub,
+  readr,
+  tidyr,
+  workspace,
+  stats
+Suggests:
+  devtools,
+  emoa,
+  randomForest,
+  RColorBrewer
+Remotes:
+  dynverse/dyneval,
+  dynverse/dyngen,
+  dynverse/dynmethods,
+  dynverse/dynplot,
+  dynverse/dynutils,
+  dynverse/dyntoy,
+  dynverse/dynwrap@devel,
+  rcannood/qsub@devel
+RoxygenNote: 7.0.2
