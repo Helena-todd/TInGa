@@ -1,5 +1,5 @@
 # TInGa
-This is a repository hosting the implementation of TinGa, a trajectory inference method based on growing neural gas.
+This is a repository hosting the implementation of TinGa, a trajectory inference method based on growing neural gas [^1].
 
 The scripts and functions in this package can be used to:
 
@@ -7,3 +7,4 @@ The scripts and functions in this package can be used to:
 * Run top performing trajectory inference methods such as Slingshot, PAGA, Monocle3, RaceID/StemID
 * Generate figures to compare the performance of TInGa to other methods
 
+[^1]: Fritzke, B. (1995) A growing neural gas network learns topologies, _Advances in Neural Information Processing Systems_ 7, 625-632.
