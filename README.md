@@ -10,4 +10,5 @@ Once all the datasets have been downloaded locally, we can load one specific dat
 
 ```{r}
 dataset <- dynbenchmark::load_dataset("synthetic/dyntoy/converging_1")
+dynplot::plot_dimred(dataset)
 ```
