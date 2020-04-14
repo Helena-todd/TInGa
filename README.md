@@ -60,7 +60,7 @@ dynplot::plot_heatmap(
   traj, 
   expression_source = TInGa::data_exp)
 ```
-![heatmap](heatmap.png "Heatmap")
+# <img src="heatmap.png" width="700">
 
 Visualise the expression of one feature of interest in the trajectory
 
