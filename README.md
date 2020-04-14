@@ -71,7 +71,7 @@ dynplot::plot_dimred(
   expression_source = TInGa::data_exp, 
   feature_oi = "MT1E")
 ```
-![m1te trajectory plot](M1TE.png "M1TE expression plot")
+# <img src="M1TE.png" width="600">
 
 ## Acknowledgments
 
