@@ -51,7 +51,7 @@ dynplot::plot_dimred(
   traj,
   label_milestones = TRUE)
 ```
-![trajectory plot](traj.png "Trajectory")
+# <img src="traj.png" width="600">
 
 The features that vary the most along the trajectory can be identified and plotted in the form of a heatmap using dynplot. If the trajectory contains branching, the different branches will be represented separately in the heatmap
 
