@@ -6,15 +6,11 @@ This is a repository hosting the R implementation of TinGa, a trajectory inferen
 
 ## Getting Started
 
-These instructions show how to use TinGa on an example single cell dataset and how to visualise its results using the dynplot package hosted on github [2].
-
-[2]: [Dynplot](https://github.com/dynverse/dynplot) 
+These instructions show how to use TinGa on an example single cell dataset and how to visualise its results using the dynplot package hosted on github (see https://github.com/dynverse/dynplot)
 
 ### Installing
 
-TinGa can be used in the dynverse framework [3], which offers a wide range of functions for visualisation of trajectories and genes of interest in single cell datasets. 
-
-[3]: [Dynverse](https://dynverse.org/users/2-quick_start/)
+TinGa can be used in the dynverse framework (see https://dynverse.org/users/2-quick_start/), which offers a wide range of functions for visualisation of trajectories and genes of interest in single cell datasets. 
 
 TInGa, dynwrap and dynplot can be installed in R as follows:
 
