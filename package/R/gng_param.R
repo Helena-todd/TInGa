@@ -23,13 +23,6 @@ gng_param <- dynwrap::create_ti_method_r(
         values = "landmark_mds",
         description = "Which dimensionality reduction method to use"
       ),
-      character_parameter(
-        id = "gng_method",
-        default = "researchgng::GNG",
-        # values = names(dyndimred::list_dimred_methods()),
-        values = c("researchgng::GNG", "researchgng::GNG_km_init"),
-        description = "Which GNG method to use"
-      ),
       integer_parameter(
         id = "ndim",
         default = 5L,
@@ -109,31 +102,18 @@ gng_param <- dynwrap::create_ti_method_r(
     dimred <- dyndimred::dimred(expression, method = parameters$dimred_method, ndim = parameters$ndim)
 
     # calculate GNG
-    if(parameters$gng_method == "researchgng::GNG"){
-      gng_out <- researchgng::GNG(
-        dimred,
-        max_iter = parameters$max_iter,
-        max_nodes = parameters$max_nodes,
-        epsilon_b = parameters$epsilon_b,
-        epsilon_n = parameters$epsilon_n,
-        age_max = parameters$age_max,
-        lambda = parameters$lambda,
-        alpha = parameters$alpha,
-        beta = parameters$beta
-      )
-    } else if (parameters$gng_method == "researchgng::GNG_km_init"){
-      gng_out <- researchgng::GNG_km_init(
-        dimred,
-        max_iter = parameters$max_iter,
-        max_nodes = parameters$max_nodes,
-        epsilon_b = parameters$epsilon_b,
-        epsilon_n = parameters$epsilon_n,
-        age_max = parameters$age_max,
-        lambda = parameters$lambda,
-        alpha = parameters$alpha,
-        beta = parameters$beta
-      )
-    }
+    gng_out <- TInGa::GNG(
+      dimred,
+      max_iter = parameters$max_iter,
+      max_nodes = parameters$max_nodes,
+      epsilon_b = parameters$epsilon_b,
+      epsilon_n = parameters$epsilon_n,
+      age_max = parameters$age_max,
+      lambda = parameters$lambda,
+      alpha = parameters$alpha,
+      beta = parameters$beta
+    )
+
     node_dist <- stats::dist(gng_out$node_space) %>% as.matrix
 
     # transform to milestone network

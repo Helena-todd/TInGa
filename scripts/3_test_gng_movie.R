@@ -1,7 +1,6 @@
 library(tidyverse)
 library(workspace)
 library(gng)
-library(researchgng)
 library(gganimate)
 
 project("researchgng", "test_gng")

@@ -1,6 +1,6 @@
 #' GNG
 #'
-#' Different initialisation of GNG in Robrecht's implementation
+#' The Growing Neural Gas algorithm adapted to trajectory inference
 #'
 #' @param x the expression dataset
 #' @param max_iter Maximum of iterations

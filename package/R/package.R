@@ -1,4 +1,4 @@
-#' Researching variants of GNG
+#' Trajectory inference using Growing Neural Gas
 #'
 #' @import dplyr
 #' @import tidyr
@@ -11,5 +11,5 @@
 #' @importFrom glue glue
 #'
 #' @docType package
-#' @name researchgng
+#' @name TInGa
 NULL
