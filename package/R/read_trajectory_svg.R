@@ -6,19 +6,12 @@
 #'
 #' @importFrom workspace raw_file derived_file
 #' @importFrom png readPNG
-read_trajectory_svg <- function(id) {
-  raw_file_root <- workspace::raw_file(id, experiment_id = "trajectory_svgs")
-  svg_file <- paste0(raw_file_root, ".svg")
-
-  derived_file_root <- workspace::derived_file(id, experiment_id = "trajectory_svgs")
-  pdf_file <- paste0(derived_file_root, ".pdf")
-  png_file <- paste0(derived_file_root, ".png")
-
+read_trajectory_svg <- function(svg_file, pdf_file, png_file) {
   # convert svg to pdf
   system(paste0("inkscape '", svg_file, "' --export-pdf='", pdf_file, "'"))
 
   # convert pdf to png
-  system(paste0("pdftoppm -scale-to 1000 -png '", pdf_file, "' -singlefile '", derived_file_root, "'"))
+  system(paste0("pdftoppm -scale-to 1000 -png '", pdf_file, "' -singlefile '", basename(png_file), "'"))
 
   # read image from png
   traj_png <- png::readPNG(png_file)

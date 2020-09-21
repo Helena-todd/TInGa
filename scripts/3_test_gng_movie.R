@@ -5,8 +5,15 @@ library(gganimate)
 
 project("researchgng", "test_gng")
 
+raw_file_root <- workspace::raw_file(id, experiment_id = "trajectory_svgs")
+svg_file <- paste0(raw_file_root, ".svg")
+
+derived_file_root <- workspace::derived_file(id, experiment_id = "trajectory_svgs")
+pdf_file <- paste0(derived_file_root, ".pdf")
+png_file <- paste0(derived_file_root, ".png")
+
 # read trajectory file
-traj <- read_trajectory_svg("combined2")
+traj <- read_trajectory_svg(svg_file, pdf_file, png_file)
 
 # sample points from density
 points <- generate_points(traj$density, num_points = 2000)
