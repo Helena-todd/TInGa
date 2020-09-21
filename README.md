@@ -104,6 +104,47 @@ plot_dimred(
 
 <img src="results/Readme_figures/unnamed-chunk-6-1.png" width="100%" />
 
+## TinGa with a prior dimensionality reduction
+
+Use the following code to run TinGa on a custom dimensionality reduction
+(e.g. UMAP, tSNE, PCA, …) provided by you.
+
+``` r
+# calculate a PCA
+dimred <- prcomp(TInGa::data_exp)$x[,1:2]
+
+data_with_prior <-
+  wrap_expression(
+    expression = TInGa::data_exp,
+    counts = TInGa::data_counts
+  ) %>%
+  add_prior_information(
+    dimred = dimred
+  )
+```
+
+Apply TinGa to custom dimred
+
+``` r
+traj <- infer_trajectory(
+  data_with_prior, 
+  method = gng_param2(), 
+  give_priors = "dimred",
+  seed = 42
+)
+```
+
+Visualise the resulting trajectory using dynplot
+
+``` r
+plot_dimred(
+  traj,
+  label_milestones = TRUE
+)
+```
+
+<img src="results/Readme_figures/unnamed-chunk-9-1.png" width="100%" />
+
 ## Acknowledgments
 
   - to @zouter and @rcannood for the remarkable dynverse packages they
