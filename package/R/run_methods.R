@@ -6,7 +6,7 @@
 #'
 #' @return a list of errors and results from the required GNG version
 #' @export
-
+#' @importFrom dyneval evaluate_ti_method
 run_methods <- function(dataset, method_param_name, parameters){
   methods_name <- list("GNG_version" = eval(parse(text= method_param_name)))
 

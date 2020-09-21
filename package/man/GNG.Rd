@@ -45,5 +45,5 @@ GNG(
 A gng object
 }
 \description{
-Different initialisation of GNG in Robrecht's implementation
+The Growing Neural Gas algorithm adapted to trajectory inference
 }

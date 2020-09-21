@@ -25,10 +25,8 @@ Imports:
   gng,
   igraph,
   purrr,
-  qsub,
   readr,
   tidyr,
-  workspace,
   stats
 Suggests:
   devtools,
@@ -37,11 +35,7 @@ Suggests:
   RColorBrewer
 Remotes:
   dynverse/dyneval,
-  dynverse/dyngen,
   dynverse/dynmethods,
   dynverse/dynplot,
-  dynverse/dynutils,
-  dynverse/dyntoy,
-  dynverse/dynwrap@devel,
-  rcannood/qsub@devel
-RoxygenNote: 7.0.2
+  dynverse/dyntoy
+RoxygenNote: 7.1.1
