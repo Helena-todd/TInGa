@@ -11,7 +11,7 @@ gng_param <- dynwrap::create_ti_method_r(
     wrapper = def_wrapper(
       # describe run fun inputs and outputs
       input_required = "expression",
-      input_optional = NULL
+      input_optional = "dimred"
     ),
 
     # describe tuneable parameters
@@ -99,7 +99,12 @@ gng_param <- dynwrap::create_ti_method_r(
     checkpoints <- list(method_afterpreproc = as.numeric(Sys.time()))
 
     # perform dimensionality reduction
-    dimred <- dyndimred::dimred(expression, method = parameters$dimred_method, ndim = parameters$ndim)
+    # or reuse if prior is given
+    if (is.null(priors$dimred)) {
+      dimred <- dyndimred::dimred(expression, method = parameters$dimred_method, ndim = parameters$ndim)
+    } else {
+      dimred <- priors$dimred
+    }
 
     # calculate GNG
     gng_out <- TInGa::GNG(
