@@ -4,7 +4,7 @@
 \alias{read_trajectory_svg}
 \title{Read trajectory svg}
 \usage{
-read_trajectory_svg(id)
+read_trajectory_svg(svg_file, pdf_file, png_file)
 }
 \arguments{
 \item{id}{The name of the trajectory svg}
