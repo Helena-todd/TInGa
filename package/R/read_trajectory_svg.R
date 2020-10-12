@@ -4,7 +4,6 @@
 #'
 #' @export
 #'
-#' @importFrom workspace raw_file derived_file
 #' @importFrom png readPNG
 read_trajectory_svg <- function(svg_file, pdf_file, png_file) {
   # convert svg to pdf
